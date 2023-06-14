@@ -4,7 +4,7 @@ config:
     - duration: 120
       arrivalRate: 4
   reporters:
-    - csv
+    - json
 
 scenarios:
   - name: "Search Tools"
