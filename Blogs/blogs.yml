@@ -1,8 +1,8 @@
 config:
   target: "http://localhost:7090"
   phases:
-    - duration: 180
-      arrivalRate: 3
+    - duration: 500
+      arrivalRate: 50
   reporters:
     - json
   defaults:
