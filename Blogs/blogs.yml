@@ -1,76 +1,59 @@
 config:
-  target: "http://localhost:5000"
+  target: "http://localhost:7090"
   phases:
-    - duration: 60
-      arrivalRate: 10
+    - duration: 180
+      arrivalRate: 3
+  reporters:
+    - json
   defaults:
     headers:
       Content-Type: "application/json"
+
 scenarios:
   - name: "Add Comment to Blog"
     flow:
       - post:
           url: "/v1/blogs/addComment"
           json:
-            blogId: "INSERT_BLOG_ID"
-            userId: "INSERT_USER_ID"
+            blogId: "6460c6e845960f2ba09d47f1"
+            userId: "6458c2a228dad01684ad9dd5"
             comment:
-              comment: "My comment placeholder"
+              comment: "My comment stress test"
+
   - name: "Get All Categories"
     flow:
       - get: "/v1/blogs/get/categories"
+
   - name: "Get Blogs by Category and Paginate"
     flow:
-      - get: "/v1/blogs/get/category/:category?page=:pagenumber&limit=:limitnumber"
-          params:
-            category: "INSERT_CATEGORY_NAME"
-            pagenumber: "INSERT_PAGE_NUMBER"
-            limitnumber: "INSERT_LIMIT_NUMBER"
+      - get: "/v1/blogs/get/category/chatbot?page=1&limit=20"
+
   - name: "Get 5 Most Recent Blogs"
     flow:
       - get: "/v1/blogs/recent?limit=5"
+
   - name: "Get 5 Most Trending Blogs"
     flow:
       - get: "/v1/blogs/get/trending"
-          headers:
-            Sort-By: "views"
-            Sort-Order: "desc"
-            limit: 5
+
   - name: "Get Blogs with Pagination"
     flow:
-      - get: "/v1/blogs/get?limit=:limit&page=:page"
-          params:
-            limit: 100
-            page: "INSERT_PAGE_NUMBER"
+      - get: "/v1/blogs/get?limit=20&page=1"
+
   - name: "Get Specific Blog"
     flow:
-      - get: "/v1/blogs/:_id"
-          params:
-            _id: "INSERT_BLOG_ID"
-  - name: "Edit Blog"
-    flow:
-      - put: "/v1/blogs/edit/:_id"
-          params:
-            _id: "INSERT_BLOG_ID"
-  - name: "Delete Blog"
-    flow:
-      - delete: "/v1/blogs/delete/:_id"
-          params:
-            _id: "INSERT_BLOG_ID"
+      - get: "/v1/blogs/6460c6e845960f2ba09d47f1"
 
   - name: "Add Comment to Blog"
     flow:
       - post:
           url: "/v1/blogs/comment/add?blogId=:BLOGID"
           json:
-            user: "user_name"
-            comment: "comment"
+            user: "6458c2a228dad01684ad9dd5"
+            comment: "comment for stress testing"
           headers:
-            Authorization: "Bearer <token>"
-
+            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDU4YzJhMjI4ZGFkMDE2ODRhZDlkZDUiLCJpYXQiOjE2ODY3NTExODQsImV4cCI6MTY4Njc4MTE4NCwidHlwZSI6ImFjY2VzcyJ9.LbDroQ-4WJ0qs2rtrmCLhgHWrJHIX0BPSI9pO42PjXM"
 
   - name: "Get Comments of a Specific Blog"
     flow:
-      - get: "/v1/blogs/comment/get/:id"
-          params:
-            id: "INSERT_BLOG_ID"
+      - get: "/v1/blogs/comment/get/6460c6e845960f2ba09d47f1"
