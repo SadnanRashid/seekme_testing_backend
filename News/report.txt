@@ -1,0 +1,48 @@
+Total number of virtual users created: 4800
+
+Total number of virtual users completed: 4800
+
+Total number of virtual users failed: 0
+
+Total number of HTTP requests: 4800
+
+Total number of HTTP responses: 4800
+
+Distribution of response times (in milliseconds):
+
+Minimum: 43
+Maximum: 1482
+p50 (50th percentile): 117.9
+p75 (75th percentile): 172.5
+p90 (90th percentile): 333.7
+p95 (95th percentile): 478.3
+p99 (99th percentile): 837.3
+p999 (99.9th percentile): 1300.1
+Distribution of session lengths (in milliseconds):
+
+Minimum: 52.7
+Maximum: 1510.6
+p50 (50th percentile): 125.2
+p75 (75th percentile): 179.5
+p90 (90th percentile): 340.4
+p95 (95th percentile): 478.3
+p99 (99th percentile): 871.5
+p999 (99.9th percentile): 1408.4
+Average request rate: 20 requests per second
+
+Count of responses with status code 201 (success): 4800
+
+Metrics related to specific tasks:
+
+"Get Latest News": 754 virtual users created
+"Get Trending News": 735 virtual users created
+"Create News": 687 virtual users created
+"Get News by ID": 663 virtual users created
+"Get Paginated News": 673 virtual users created
+"Get News by Category and Paginate": 622 virtual users created
+"Get All Categories": 666 virtual users created
+Test duration: 1686754850000 milliseconds
+
+Timestamp of the first metric: 1686754613339
+
+Timestamp of the last metric: 1686754853398
