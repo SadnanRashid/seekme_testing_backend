@@ -1,0 +1,49 @@
+Total number of virtual users created: 4800
+
+Total number of virtual users completed: 4800
+
+Total number of virtual users failed: 0
+
+Total number of HTTP requests: 4800
+
+Total number of HTTP responses: 4800
+
+Distribution of response times (in milliseconds):
+
+Minimum: 48
+Maximum: 5911
+p50 (50th percentile): 172.5
+p75 (75th percentile): 550.1
+p90 (90th percentile): 1300.1
+p95 (95th percentile): 1826.6
+p99 (99th percentile): 3395.5
+p999 (99.9th percentile): 5065.6
+Distribution of session lengths (in milliseconds):
+
+Minimum: 50.9
+Maximum: 5940.1
+p50 (50th percentile): 183.1
+p75 (75th percentile): 561.2
+p90 (90th percentile): 1326.4
+p95 (95th percentile): 1863.5
+p99 (99th percentile): 3464.1
+p999 (99.9th percentile): 5065.6
+Average request rate: 20 requests per second
+
+Count of responses with status code 201 (success): 4800
+
+Metrics related to specific tasks:
+
+"Get Comments of a Specific Blog": 590 virtual users created
+"Get All Categories": 585 virtual users created
+"Add Comment to Blog": 576 virtual users created
+"Get Blogs by Category and Paginate": 607 virtual users created
+"Get 5 Most Recent Blogs": 579 virtual users created
+"Get Blogs with Pagination": 636 virtual users created
+"Get Specific Blog": 582 virtual users created
+"Get 5 Most Trending Blogs": 645 virtual users created
+Test duration: 1686753240000 milliseconds
+
+Timestamp of the first metric: 1686753006033
+
+Timestamp of the last metric: 1686753247375
