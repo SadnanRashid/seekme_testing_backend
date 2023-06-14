@@ -57,3 +57,20 @@ scenarios:
       - delete: "/v1/blogs/delete/:_id"
           params:
             _id: "INSERT_BLOG_ID"
+
+  - name: "Add Comment to Blog"
+    flow:
+      - post:
+          url: "/v1/blogs/comment/add?blogId=:BLOGID"
+          json:
+            user: "user_name"
+            comment: "comment"
+          headers:
+            Authorization: "Bearer <token>"
+
+
+  - name: "Get Comments of a Specific Blog"
+    flow:
+      - get: "/v1/blogs/comment/get/:id"
+          params:
+            id: "INSERT_BLOG_ID"
