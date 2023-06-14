@@ -1,0 +1,49 @@
+config:
+  target: "http://localhost:7090"
+  phases:
+    - duration: 60
+      arrivalRate: 10
+  reporters:
+    - json
+
+scenarios:
+  - name: "Search Tools"
+    flow:
+      - get:
+          url: "/v1/tools/get/search?term=travel&page=1&limit=24"
+
+  - name: "Get Trending Tools"
+    flow:
+      - get:
+          url: "/v1/tools/get/trending"
+
+  - name: "Get All Categories"
+    flow:
+      - get:
+          url: "/v1/tools/get/categories"
+
+  - name: "Get Tools by Category"
+    flow:
+      - get:
+          url: "/v1/tools/get/category/chatbot"
+          params:
+            category: "chatbot"
+
+  - name: "Get Specific Tool"
+    flow:
+      - get:
+          url: "/v1/tools/647614faab756b65843e5ebf"
+          params:
+            id: "647614faab756b65843e5ebf"
+
+  - name: "Get All Tools"
+    flow:
+      - get:
+          url: "/v1/tools/"
+
+  - name: "Get Similar Tools"
+    flow:
+      - get:
+          url: "http://localhost:7090/v1/tools/get/similar/647614faab756b65843e5ebf"
+          params:
+            id: "647614faab756b65843e5ebf"
