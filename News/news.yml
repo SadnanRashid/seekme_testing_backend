@@ -1,0 +1,55 @@
+config:
+  target: "http://localhost:7090"
+  phases:
+    - duration: 240
+      arrivalRate: 20
+  reporters:
+    - json
+  defaults:
+    headers:
+      Content-Type: "application/json"
+
+scenarios:
+  - name: "Get Paginated News"
+    flow:
+      - get:
+          url: "/v1/news/get/paginate?page=1&limit=10"
+
+  - name: "Get Latest News"
+    flow:
+      - get:
+          url: "/v1/news/get/latest"
+
+  - name: "Get News by ID"
+    flow:
+      - get:
+          url: "/v1/news/get/news/6478ce50d5b8982918b108c4"
+
+  - name: "Create News"
+    flow:
+      - post:
+          url: "/v1/news/post"
+          json:
+            tags: ["technology", "innovation"]
+            title: "The Future of AI in Healthcare"
+            image1: "https://techcrunch.com/wp-content/uploads/2022/12/lensa-ai-magic-avatar.jpg"
+            category: "healthcare"
+            body1: "Artificial intelligence (AI) is revolutionizing the healthcare industry Artificial intelligence (AI) is revolutionizing the healthcare industry Artificial intelligence (AI) is revolutionizing the healthcare industry Artificial intelligence (AI) is revolutionizing the healthcare industry "
+            body2: "With AI-powered diagnostic tools and predictive analytics With AI-powered diagnostic tools and predictive analytics With AI-powered diagnostic tools and predictive analytics With AI-powered diagnostic tools and predictive analytics With AI-powered diagnostic tools and predictive analytics With AI-powered diagnostic tools and predictive analytics With AI-powered diagnostic tools and predictive analytics With AI-powered diagnostic tools and predictive analytics With AI-powered diagnostic tools and predictive analytics With AI-powered diagnostic tools and predictive analytics With AI-powered diagnostic tools and predictive analytics With AI-powered diagnostic tools and predictive analytics "
+            image2: "https://techcrunch.com/wp-content/uploads/2022/12/lensa-ai-magic-avatar.jpg"
+            subtitle: "How AI is transforming patient care and medical research"
+
+  - name: "Get Trending News"
+    flow:
+      - get:
+          url: "/v1/news/get/trending"
+
+  - name: "Get All Categories"
+    flow:
+      - get:
+          url: "/v1/news/get/categories"
+
+  - name: "Get News by Category and Paginate"
+    flow:
+      - get:
+          url: "/v1/news/get/category/chatbot?page=1&limit=10"

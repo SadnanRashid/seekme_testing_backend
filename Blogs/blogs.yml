@@ -10,16 +10,6 @@ config:
       Content-Type: "application/json"
 
 scenarios:
-  # - name: "Add Comment to Blog"
-  #   flow:
-  #     - post:
-  #         url: "/v1/blogs/addComment"
-  #         json:
-  #           blogId: "6460c6e845960f2ba09d47f1"
-  #           userId: "6458c2a228dad01684ad9dd5"
-  #           comment:
-  #             comment: "My comment stress test"
-
   - name: "Get All Categories"
     flow:
       - get:
