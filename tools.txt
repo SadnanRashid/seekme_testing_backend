@@ -1,0 +1,8 @@
+Total number of virtual users created, completed, and failed (480 created, 480 completed, 0 failed).
+Total number of HTTP requests and responses (480 requests, 480 responses).
+Distribution of response times and session lengths, including percentiles (p50, p75, p90, p95, p99, p999).
+Average request rate (2 requests per second).
+Minimum and maximum values for response times and session lengths.
+Count of responses with status code 201 (success).
+Metrics related to specific tasks (e.g., "Get Specific Tool," "Get All Categories," etc.).
+Additional attributes indicating the duration and timestamps of the test.
